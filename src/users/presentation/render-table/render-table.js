@@ -28,7 +28,6 @@ const createTable = () => {
  */
 export const renderTable = (element) => {
   const users = usersStore.getUsers();
-  console.log(users);
 
   if (!table) {
     table = createTable();
@@ -37,7 +36,7 @@ export const renderTable = (element) => {
     //TODO listeners a la table
   }
 
-  let tableHTML = "";
+  let tableHTML = " ";
   users.forEach((user) => {
     tableHTML += `
       <tr>
