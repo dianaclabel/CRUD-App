@@ -10,8 +10,8 @@ export const showModal = () => {
 
 export const hideModal = () => {
   modal?.classList.add("hide-modal");
-
-  // TODO: Reset del formulario
+  // reset -> resetea los campos
+  form?.reset();
 };
 
 /**
@@ -35,7 +35,29 @@ export const renderModal = (element) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    console.log("Formulario enviado");
+    //formdata nos devuelve un objeto iterable
+    const formData = new FormData(form);
+    const userLike = {};
+
+    for (const [key, value] of formData) {
+      if (key === "balance") {
+        //value lo convertimos en numero con el signo +
+        userLike[key] = +value;
+        //Para que haga la siguiente iteración del ciclo
+        continue;
+      }
+
+      if (key === "isActive") {
+        userLike[key] = value === "on" ? true : false;
+        continue;
+      }
+
+      userLike[key] = value;
+    }
+
+    // console.log(userLike);
+    //TODO: guardar usuario
+    hideModal();
   });
 
   element.append(modal);
