@@ -15,7 +15,7 @@ export const loadUsersByPage = async (page = 1) => {
   //Tambien podemos hacerlo de esta forma mas reducida
   // const users = body.data.map(localhostUserToModel(userLike));
 
-  console.log(users); // [user, user, user, xn]
+  // console.log(users); // [user, user, user, xn]
 
   return users;
 };
