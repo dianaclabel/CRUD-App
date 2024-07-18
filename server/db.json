@@ -361,15 +361,6 @@
       "gender": "male"
     },
     {
-      "id": 41,
-      "isActive": true,
-      "balance": 1996.04,
-      "avatar": "http://placehold.it/32x32",
-      "first_name": "Stafford",
-      "last_name": "Rios",
-      "gender": "male"
-    },
-    {
       "id": 42,
       "isActive": false,
       "balance": 2402.28,
@@ -449,13 +440,6 @@
       "first_name": "Mcbride",
       "last_name": "Woodward",
       "gender": "male"
-    },
-    {
-      "balance": 12345,
-      "first_name": "Diana",
-      "isActive": true,
-      "last_name": "Cerdita",
-      "id": 51
     }
   ]
 }

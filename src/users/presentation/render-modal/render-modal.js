@@ -38,6 +38,7 @@ const setFormValues = (user) => {
   form.querySelector('[name="lastName"]').value = user.lastName;
   form.querySelector('[name="balance"]').value = user.balance;
   form.querySelector('[name="isActive"]').checked = user.isActive;
+
   loadedUser = user;
 };
 
@@ -65,6 +66,7 @@ export const renderModal = (element, callback) => {
 
     //formdata nos devuelve un objeto iterable
     const formData = new FormData(form);
+
     const userLike = { ...loadedUser };
 
     for (const [key, value] of formData) {
@@ -75,15 +77,13 @@ export const renderModal = (element, callback) => {
         continue;
       }
 
-      if (key === "isActive") {
-        userLike[key] = value === "on" ? true : false;
-        continue;
-      }
-
       userLike[key] = value;
     }
 
-    // console.log(userLike);
+    userLike.isActive = formData.get("isActive") === "on";
+    // userLike.balance = +formData.get("balance");
+
+    console.log(userLike);
     await callback(userLike);
     hideModal();
   });
